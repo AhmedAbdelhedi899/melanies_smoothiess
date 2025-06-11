@@ -49,7 +49,6 @@ if ingredients_list:
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + search_on)
         fv_df = st.dataframe(data = fruityvice_response.json() , use_container_width= True)
                              
-    
     my_insert_stmt = f"""INSERT INTO smoothies.public.orders (ingredients, NAME_ON_ORDER)
                          VALUES ('{ingredients_string}', '{name_on_order}')"""
 
