@@ -33,10 +33,6 @@ if ingredients_list:
         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
         sf_df= st.dataframe(data = smoothiefroot_response.json(), use_container_width= True)
 
-    #st.write(ingredients_string)  
-
-
-
     my_insert_stmt = f"""INSERT INTO smoothies.public.orders (ingredients, NAME_ON_ORDER)
                          VALUES ('{ingredients_string}', '{name_on_order}')"""
 
